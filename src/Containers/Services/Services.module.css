@@ -1,0 +1,54 @@
+.Services {
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.Services img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .30s ease-in;
+}
+
+.Services article{
+    position: relative;
+}
+
+.Services .firstPhoto{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.Services .secondPhoto{
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+.Services .thirdPhoto{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+}
+.Services .forthPhoto{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+}
+.Services .fifthPhoto{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 2;
+}
+
+.Services article:hover img{
+    transform: scale(0.9);
+}
+.Services article:hover div{
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+}
+

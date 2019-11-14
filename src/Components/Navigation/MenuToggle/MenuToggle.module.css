@@ -5,8 +5,13 @@
     font-size: 30px;
     cursor: pointer;
     z-index: 100;
+    color: white;
 }
 
 .MenuToggle:hover {
     opacity: .7;
+}
+
+.MenuToggle.closed {
+    color: black;
 }

@@ -22,11 +22,8 @@ class Layout extends React.Component {
             menu: false
         })
     }
+
     render() {
-        const mainCls = [
-            'vh-100',
-            'bg-info'
-          ]
 
         return (
             <React.Fragment>
@@ -41,7 +38,7 @@ class Layout extends React.Component {
                     isOpen={this.state.menu}
                 />
 
-                <main className = {mainCls.join(' ')}>
+                <main>
                     {this.props.children}
                 </main>
             </React.Fragment>

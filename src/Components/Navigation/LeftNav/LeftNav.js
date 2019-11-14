@@ -1,16 +1,21 @@
 import React from 'react'
 import classes from './LeftNav.module.css'
 import Backdrop from '../../UI/Backdrop/Backdrop'
-
+import {NavLink} from 'react-router-dom'
 
 const LeftNav = props => {
     
     const links = [
-        1, 
-        2, 
-        3
+        {to: '/', label: 'HOME', exact: true}, 
+        {to: '/about', label: 'ABOUT', exact: false}, 
+        {to: '/services', label: 'SERVICES', exact: false},
+        {to: '/galery', label: 'GALERY', exact: false},
+        {to: '/contacts', label: 'CONTACTS', exact: false},
+        // {to: '/auth', label: 'AUTHORIZATION', exact: false},
+        // {to: '/user', label: 'USER', exact: false},
     ]
     
+
     const cls = [
         classes.LeftNav,
     ]
@@ -20,7 +25,14 @@ const LeftNav = props => {
             links.map((item, idx) => {
                 return (
                 <li key = {idx}>
-                    <a>{item}</a>
+                    <NavLink
+                        to={item.to}
+                        exact={item.exact}
+                        activeClassName = {classes.active}
+                        onClick = {props.onClose}
+                    >
+                        {item.label}
+                    </NavLink>
                 </li>
                 )
             })
