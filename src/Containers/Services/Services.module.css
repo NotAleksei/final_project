@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: .30s ease-in;
+    transition: .4s ease-out;
 }
 
 .Services article{
@@ -49,6 +49,6 @@
 }
 .Services article:hover div{
     background: rgba(0, 0, 0, 0.9);
-    display: flex;
+    opacity: 1;
 }
 

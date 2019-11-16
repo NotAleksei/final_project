@@ -1,0 +1,8 @@
+.Select{
+    width: 40%;
+    border: 1px solid #bebebe;
+    height: 29px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}

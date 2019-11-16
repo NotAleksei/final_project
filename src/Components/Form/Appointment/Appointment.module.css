@@ -1,0 +1,46 @@
+.Appointment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.Appointment .inputInfo{
+    width: 80%;
+}
+
+.Appointment input{
+    width: 40%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.Appointment input:focus {
+    outline: none;
+  }
+
+.Appointment .user,.Appointment .date{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Appointment .extra {
+    width: 80%;
+    height: 100px;
+  }
+
+.Appointment button{
+    width: 80%;
+}
+
+
+
+::-webkit-calendar-picker-indicator {
+    /* color: transparent; */
+    opacity: 1;
+    /* background: url(//www.gravatar.com/avatar/cbfaff96665b7567defe1b34a883db8b?s=16&d=identicon&r=PG) no-repeat center; */
+    background-size: contain;
+  }

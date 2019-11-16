@@ -1,16 +1,24 @@
 import React from 'react'
-// import classes from './ServiceInfo.module.css'
+import Appointment from '../../Components/Form/Appointment/Appointment'
+import classes from './ServicePage.module.css'
 
 class ServicePage extends React.Component{
-
-    componentDidMount() {
-        console.log(this.props.match.params.id)
+    state = {
+        HairCut: ['СТРИЖКА', 'HairCut'],
+        Shave: ['БРИТЬЕ', 'Shave'],
+        CutAndShave: ['СТРИЖКА И БРИТЬЕ', 'CutAndShave'],
+        ShapeUp: ['МОДЕЛИРОВАНИЕ БОРОДЫ', 'ShapeUp'],
+        All: ['All', 'All'],
     }
-    //Страница с услугами одна, кнопка записи, фоточка, верстка. но в зависимости от получаемого ID - можно подгрузить фоточку, наименованеи услуги. (все это хранить в объекте)
 
-    render(){return(
-        <div>
-            <p>Услуга</p>
+    //Наименование и описание услуги слева. Форма записи справа
+
+    render(){
+        const stateName = this.props.match.params.id
+        return(
+        <div className={classes.ServicePage}>
+            <h1>{this.state[stateName][0]}</h1>
+            <Appointment/>
         </div>
     )
 }

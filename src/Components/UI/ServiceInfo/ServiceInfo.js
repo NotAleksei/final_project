@@ -6,9 +6,9 @@ const ServiceInfo = props => {
 
 
     return(
-        <Link to={'/service/' + 1}>
+        <Link to={'/service/' + props.serviceId}>
             <div className={classes.ServiceInfo}>
-                <p>{props.serviceName}</p>
+                <h2>{props.serviceName}</h2>
             </div>
         </Link>
     )
