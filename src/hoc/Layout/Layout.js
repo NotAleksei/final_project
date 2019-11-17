@@ -1,6 +1,7 @@
 import React from 'react'
 import LeftNav from '../../Components/Navigation/LeftNav/LeftNav'
 import MenuToggle from '../../Components/Navigation/MenuToggle/MenuToggle'
+import ErrorPage from '../../Containers/ErrorPage/ErrorPage'
 import styles from './Layout.css'
 
 

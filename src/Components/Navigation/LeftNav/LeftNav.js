@@ -6,11 +6,11 @@ import {NavLink} from 'react-router-dom'
 const LeftNav = props => {
     
     const links = [
-        {to: '/', label: 'HOME', exact: true}, 
-        {to: '/about', label: 'ABOUT', exact: false}, 
-        {to: '/services', label: 'SERVICES', exact: false},
-        {to: '/galery', label: 'GALERY', exact: false},
-        {to: '/contacts', label: 'CONTACTS', exact: false},
+        {to: '/', label: 'ГЛАВНАЯ', exact: true}, 
+        {to: '/about', label: 'О НАС', exact: false}, 
+        {to: '/services', label: 'УСЛУГИ', exact: false},
+        {to: '/galery', label: 'ГАЛЕРЕЯ', exact: false},
+        {to: '/contacts', label: 'КОНТАКТЫ', exact: false},
         // {to: '/auth', label: 'AUTHORIZATION', exact: false},
         // {to: '/user', label: 'USER', exact: false},
     ]
@@ -50,6 +50,13 @@ const LeftNav = props => {
                 <ul>
                     {renderLinks()}
                 </ul>
+                <NavLink
+                        to='/auth'
+                        onClick = {props.onClose}
+                        className = {classes.button}
+                    >
+                        Зарегистрироваться
+                </NavLink>
             </nav>
            {props.isOpen ? <Backdrop onclick={props.onClose}/>:null}
         </React.Fragment>

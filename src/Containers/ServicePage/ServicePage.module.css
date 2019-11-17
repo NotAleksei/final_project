@@ -6,13 +6,10 @@
     bottom: 0;
     right: 0;
 }
-/* .ServicePage {
-    width: 50%;
-} */
 
 .ServicePage h1 {
     display: flex;
     justify-content: center;
     align-self: center;
-    width: 50%;
+    width: 35%;
 }
