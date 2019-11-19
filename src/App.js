@@ -8,27 +8,38 @@ import Auth from './Containers/Auth/Auth'
 import ErrorPage from './Containers/ErrorPage/ErrorPage'
 import {Route, Switch} from 'react-router-dom'
 
+let logInState =  false;
+let user = null;
 
+const logIn = (param) => {
+  logInState = true;
+  user = param
+  console.log(logInState,user)
+}
 
 class App extends React.Component{
 
-state={
-  logIn: true,
-  userName: 'name'
-}
 
-
-// передавай в layout сведения о регистрации. 
 render(){
+  console.log(user, logInState)
     return (
       <Layout>
         <Switch>
           <Route path='/' exact = {true} component={HomePage}/>
           <Route path='/services' component={Services}/>
           <Route path='/service/:id' component={ServicePage}/>
-          <Route path='/auth' component={Auth}/>
-          {this.state.logIn && <Route path='/user' component={UserPage}/>}
-          <Route component={ErrorPage}/>
+          <Route 
+            path='/auth'
+            render={
+              (props) => <Auth  {...props}/>
+            }/>
+          <Route 
+          // {`/${this.state.user}`} 
+            path='/user'
+            render={
+                () => (localStorage.getItem('logIn') ? (<UserPage/>) : (<ErrorPage/>))
+              }/>
+          {/* <Route component={ErrorPage}/> */}
           {/* <Route path='/about' component={About}/>
           <Route path='/services' component={Services}/>
           <Route path='/galery' component={Galery}/>

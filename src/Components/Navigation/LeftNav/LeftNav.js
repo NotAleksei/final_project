@@ -20,6 +20,11 @@ const LeftNav = props => {
         classes.LeftNav,
     ]
 
+    const logOut = () => {
+        localStorage.removeItem('logIn')
+        props.onClose()
+    }
+
     const renderLinks = () => {
         return (
             links.map((item, idx) => {
@@ -50,13 +55,22 @@ const LeftNav = props => {
                 <ul>
                     {renderLinks()}
                 </ul>
-                <NavLink
+                {!localStorage.getItem('logIn') ?
+                    <NavLink
                         to='/auth'
                         onClick = {props.onClose}
                         className = {classes.button}
                     >
-                        Зарегистрироваться
-                </NavLink>
+                        Авторизация
+                    </NavLink> :
+                        <NavLink
+                        to='/auth'
+                        onClick = {logOut}
+                        className = {classes.button}
+                    >
+                     Выйти
+                    </NavLink>                 
+                }
             </nav>
            {props.isOpen ? <Backdrop onclick={props.onClose}/>:null}
         </React.Fragment>

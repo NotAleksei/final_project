@@ -6,17 +6,33 @@ class Auth extends React.Component {
 
     state = {
         email: '',
-        password: ''
+        password: '',
     }
 
     loginHandler = () => {
-        console.log(this.state.email, this.state.password)
+        let user = JSON.parse(localStorage.getItem(this.state.email))
+        if(user.pass === this.state.password){
+            localStorage.setItem('logIn', this.state.email)
+        } else {
+            alert('неверный логин/пароль')
+        }
     }
 
     registerHandler = () => {
-        // localStorage.setItem('ключ', 'значение')
-        console.log(this.state.email, this.state.password)
-    }
+        if (localStorage.getItem(this.state.email)){
+            alert('такой аккаунт уже есть')
+        } else {
+            localStorage.setItem(this.state.email, JSON.stringify({
+                pass: this.state.password,
+                name: '',
+                age: '',
+                city: '',
+                phone: '',
+                email: '',
+            })
+            )
+        }
+    }   
 
     changeHandler = (event) =>{
         const name = event.target.name;

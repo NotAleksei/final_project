@@ -1,7 +1,7 @@
 import React from 'react'
 import LeftNavUser from '../Navigation/LeftNavUser/LeftNavUser'
-import UserProfile from '../UserInfo/UserProfile/UserProfile'
-import UserServices from '../UserInfo/UserServices/UserServices'
+import UserProfile from '../User/UserProfile/UserProfile'
+import UserServices from '../User/UserServices/UserServices'
 import classes from './UserModal.module.css'
 
 class UserModal extends React.Component {
