@@ -15,6 +15,14 @@ selectChangeHandler= e =>{
     })
 }
 
+
+// saveAppointment = () =>{
+//     if(localStorage.getItem('logIn')){
+
+//     }
+// }
+
+
 render(){
     return(
         <div className = {classes.Appointment}>

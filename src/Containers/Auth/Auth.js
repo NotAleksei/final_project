@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import classes from './Auth.module.css'
 
 
@@ -10,7 +11,7 @@ class Auth extends React.Component {
     }
 
     loginHandler = () => {
-        let user = JSON.parse(localStorage.getItem(this.state.email))
+        let user = JSON.parse(localStorage.getItem(this.state.email))[0]
         if(user.pass === this.state.password){
             localStorage.setItem('logIn', this.state.email)
         } else {
@@ -22,15 +23,18 @@ class Auth extends React.Component {
         if (localStorage.getItem(this.state.email)){
             alert('такой аккаунт уже есть')
         } else {
-            localStorage.setItem(this.state.email, JSON.stringify({
+            let newUser = [];
+            let userInfo = {
                 pass: this.state.password,
                 name: '',
                 age: '',
                 city: '',
                 phone: '',
                 email: '',
-            })
-            )
+            }
+            newUser[0] = userInfo
+            console.log(newUser)
+            localStorage.setItem(this.state.email, JSON.stringify(newUser))
         }
     }   
 
@@ -60,12 +64,15 @@ class Auth extends React.Component {
                             <input name ='password' value={this.state.password} onChange={this.changeHandler}></input>
                         </div>
                         <div className={classes.BtnWrap}>
-                            <a 
+                            
+                            <NavLink
                                 className={classes.button}
+                                to={'/user'}
                                 onClick = {this.loginHandler}
                             >
-                                Войти
-                            </a>
+                                войти
+                            </NavLink>
+
                             <a 
                                 className={classes.button}
                                 onClick = {this.registerHandler}

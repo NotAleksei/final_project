@@ -17,10 +17,11 @@ class UserProfile extends React.Component {
    }
 render() {
     const userName = localStorage.getItem('logIn');
-    const userInfo = JSON.parse(localStorage.getItem(userName));
+    const userInfo = JSON.parse(localStorage.getItem(userName))[0];
     return (
         <div className={classes.UserProfile}>
-            {this.state.userEdit ? <UserEdit user = {userInfo} userEditToggle = {this.userEditToggle}/>:<UserInfo user = {userInfo} userEditToggle = {this.userEditToggle}/>}
+            <h1>User name</h1>
+            {this.state.userEdit ? <UserEdit user = {userInfo} userEditToggle = {this.userEditToggle}  userName = {userName}/>:<UserInfo user = {userInfo} userEditToggle = {this.userEditToggle}/>}
         </div>
     )
 }

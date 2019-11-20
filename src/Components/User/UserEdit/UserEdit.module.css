@@ -1,0 +1,26 @@
+.UserEdit{
+
+}
+
+.UserEdit input{
+    border: 1px solid #ccc;
+    padding: 7px;
+    margin: 5px 0 0 5px;
+    width: 50%;
+    outline: none;
+    font-size: 25px;
+}
+.UserEdit form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.UserEdit input:focus {
+    outline: none;
+  }
+
+.UserEdit label{
+    margin-left: 30px;
+    font-size: 25px;
+}

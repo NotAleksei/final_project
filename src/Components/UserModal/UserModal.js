@@ -14,7 +14,6 @@ class UserModal extends React.Component {
         this.setState({
             currentInterface: id,
         })
-        console.log(id)
     }
 
     render(){

@@ -11,8 +11,6 @@ const LeftNav = props => {
         {to: '/services', label: 'УСЛУГИ', exact: false},
         {to: '/galery', label: 'ГАЛЕРЕЯ', exact: false},
         {to: '/contacts', label: 'КОНТАКТЫ', exact: false},
-        // {to: '/auth', label: 'AUTHORIZATION', exact: false},
-        // {to: '/user', label: 'USER', exact: false},
     ]
     
 
@@ -54,6 +52,16 @@ const LeftNav = props => {
             <nav className= {cls.join(' ')}>
                 <ul>
                     {renderLinks()}
+                    {localStorage.getItem('logIn') ?
+                    <li>
+                        <NavLink
+                            to='/user'
+                            activeClassName = {classes.active}
+                            onClick = {props.onClose}
+                        >
+                            МОЙ КАБИНЕТ
+                        </NavLink>
+                    </li> : null}
                 </ul>
                 {!localStorage.getItem('logIn') ?
                     <NavLink

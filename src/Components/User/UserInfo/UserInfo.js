@@ -8,7 +8,6 @@ const UserInfo = props => {
 
     return (
         <React.Fragment>
-            <h1>User name</h1>
             <div>
                 <p>Имя: {user.name||null}</p>
                 <p>Возраст: {user.age||null}</p>
