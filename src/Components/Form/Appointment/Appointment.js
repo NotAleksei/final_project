@@ -1,40 +1,76 @@
 import React from 'react'
 import Select from '../../UI/Select/Select'
 import classes from './Appointment.module.css'
-import { log } from 'util'
+
 
 class Appointment extends React.Component {
 
 state={
-    value: 'time'
+    name: '',
+    phone:'',
+    date: '',
+    time: 'time',
 }
 
-selectChangeHandler= e =>{
+changeHandler= event =>{
+    const name = event.target.name;
     this.setState({
-        value: e.target.value
+        [name]: event.target.value
     })
 }
 
+selectChangeHandler = event =>{
+        console.log(event.target.value)
+        this.setState({
+            time: event.target.value
+        })
+}
 
-// saveAppointment = () =>{
-//     if(localStorage.getItem('logIn')){
 
-//     }
-// }
+saveAppointment = (e) =>{
+    e.preventDefault()
+    if(localStorage.getItem('logIn')){
+        const userName = localStorage.getItem('logIn');
+        let userInfo = JSON.parse(localStorage.getItem(userName))
+        userInfo[1].push({
+            name: this.state.name,
+            phone: this.state.phone,
+            date: this.state.date,
+            time: this.state.time,
+            serviceName: this.props.serviceName,
+        })
+
+        localStorage.setItem(userName, JSON.stringify(userInfo))
+        this.props.showSuccessModal()
+        setTimeout(()=>{this.props.showSuccessModal()},1000)
+    } else {
+        this.props.showSuccessModal()
+        setTimeout(()=>{this.props.showSuccessModal()},1000)
+    }
+}
+
 
 
 render(){
     return(
-        <div className = {classes.Appointment}>
+        <form className = {classes.Appointment}>
             <div className={classes.inputInfo}>
             <div className = {classes.user}>
-                <input placeholder='Имя'></input>
-                <input placeholder='Телефон'></input>
+                <label>Имя:</label>
+                <input name ='name' value={this.state.name} onChange={this.changeHandler}></input>
+            </div>
+            <div className = {classes.user}>
+                <label>Телефон:</label>
+                <input name ='phone' value={this.state.phone} onChange={this.changeHandler}></input>
             </div>
             <div className = {classes.date}>
-                <input type='date'></input>
+                <label>Дата:</label>
+                <input name ='date' value={this.state.date} onChange={this.changeHandler} type='date'></input>
+            </div>
+            <div className = {classes.date}>
+                <label>Время:</label>
                 <Select
-                    value = {this.state.value}
+                    value = {this.state.time}
                     onChange={this.selectChangeHandler}
                     options={[
                         {text: '9:00' , value: '9:00'},
@@ -49,13 +85,15 @@ render(){
                         {text: '18:00' , value: '18:00'}
                     ]}                    
                 />
+            </div>
             </div> 
-            </div> 
-            <input className = {classes.extra} placeholder='дополнительные пожелания'></input>
-            <button>Подтвердить запись</button>
-        </div>
+
+            <button onClick={this.saveAppointment}>Подтвердить запись</button>
+        </form>
+
     )
 }
 }
+
 
 export default Appointment

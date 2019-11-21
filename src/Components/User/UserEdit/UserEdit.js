@@ -42,23 +42,23 @@ render(){
         <div className={classes.UserEdit}>
     
             <form>
-                <div>
+                <div className={classes.inputBlock}>
                     <label>Имя:</label>
                     <input name ='name' value={this.state.name} onChange={this.changeHandler}></input>
                 </div>
-                <div>
+                <div className={classes.inputBlock}>
                     <label>Возраст</label>
                     <input name ='age' value={this.state.age} onChange={this.changeHandler}></input>
                 </div>
-                <div>
+                <div className={classes.inputBlock}>
                     <label>Город:</label>
                     <input name ='city' value={this.state.city} onChange={this.changeHandler}></input>
                 </div>
-                <div>
+                <div className={classes.inputBlock}>
                     <label>Телефон:</label>
                     <input name ='phone' value={this.state.phone} onChange={this.changeHandler}></input>
                 </div>
-                <div>
+                <div className={classes.inputBlock}>
                     <label>Email:</label>
                     <input name ='email' value={this.state.email} onChange={this.changeHandler}></input>
                 </div>

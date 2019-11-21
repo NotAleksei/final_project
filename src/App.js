@@ -28,23 +28,14 @@ render(){
           <Route path='/' exact = {true} component={HomePage}/>
           <Route path='/services' component={Services}/>
           <Route path='/service/:id' component={ServicePage}/>
+          <Route path='/auth' component={Auth}/>
           <Route 
-            path='/auth'
-            render={
-              (props) => <Auth  {...props}/>
-            }/>
-          <Route 
-          // {`/${this.state.user}`} 
             path='/user'
             render={
                 () => (localStorage.getItem('logIn') ? (<UserPage/>) : (<ErrorPage/>))
               }/>
-          {/* <Route component={ErrorPage}/> */}
-          {/* <Route path='/about' component={About}/>
-          <Route path='/services' component={Services}/>
-          <Route path='/galery' component={Galery}/>
-          <Route path='/contacts' component={Contacts}/>
-          <Route path='/user' component={UserPage}/> */}
+          <Route component={ErrorPage}/>
+
         </Switch>
       </Layout>
     )

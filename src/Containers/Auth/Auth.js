@@ -33,6 +33,7 @@ class Auth extends React.Component {
                 email: '',
             }
             newUser[0] = userInfo
+            newUser[1] = []
             console.log(newUser)
             localStorage.setItem(this.state.email, JSON.stringify(newUser))
         }

@@ -9,7 +9,6 @@ const LeftNav = props => {
         {to: '/', label: 'ГЛАВНАЯ', exact: true}, 
         {to: '/about', label: 'О НАС', exact: false}, 
         {to: '/services', label: 'УСЛУГИ', exact: false},
-        {to: '/galery', label: 'ГАЛЕРЕЯ', exact: false},
         {to: '/contacts', label: 'КОНТАКТЫ', exact: false},
     ]
     

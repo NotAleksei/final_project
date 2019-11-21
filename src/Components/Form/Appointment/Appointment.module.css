@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: 40%;
 }
 
 .Appointment .inputInfo{
@@ -11,7 +11,7 @@
 }
 
 .Appointment input{
-    width: 40%;
+    width: 70%;
     border: none;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
@@ -27,16 +27,15 @@
     width: 100%;
 }
 
-.Appointment .extra {
-    width: 70%;
-    height: 100px;
-  }
-
-.Appointment button{
+.Appointment select{
     width: 70%;
 }
 
 
+.Appointment button{
+    margin-top: 20px;
+    width: 70%;
+}
 
 ::-webkit-calendar-picker-indicator {
     /* color: transparent; */
