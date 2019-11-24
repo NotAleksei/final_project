@@ -17,11 +17,13 @@ class UserModal extends React.Component {
     }
 
     render(){
+        const userName = localStorage.getItem('logIn');
+        const services = JSON.parse(localStorage.getItem(userName))[1]
         return(
             <div className={classes.UserModal}>
                 <LeftNavUser click = {this.leftNavHandler}/>
                 {this.state.currentInterface === 'Profile'? <UserProfile/> : null}
-                {this.state.currentInterface === 'Services'? <UserServices/> : null}
+                {this.state.currentInterface === 'Services'? <UserServices services={services}/> : null}
                 {/* {this.state.currentInterface === 'Statistic'? <UserProfile/> : null} */}
             </div>
         )

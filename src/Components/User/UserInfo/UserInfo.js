@@ -15,8 +15,13 @@ const UserInfo = props => {
                 <p>Телефон: {user.phone||null}</p>
                 <p>Email: {user.email||null}</p>
             </div>
-            
-            <button onClick={props.userEditToggle}>редактировать профиль</button>
+            <a 
+                className={classes.button}
+                onClick = {props.userEditToggle}
+            >
+                редактировать профиль
+            </a>
+
         </React.Fragment>
     )
 }

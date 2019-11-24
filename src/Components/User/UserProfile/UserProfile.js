@@ -20,7 +20,7 @@ render() {
     const userInfo = JSON.parse(localStorage.getItem(userName))[0];
     return (
         <div className={classes.UserProfile}>
-            <h1>User name</h1>
+            <h1>профиль</h1>
             {this.state.userEdit ? <UserEdit user = {userInfo} userEditToggle = {this.userEditToggle}  userName = {userName}/>:<UserInfo user = {userInfo} userEditToggle = {this.userEditToggle}/>}
         </div>
     )

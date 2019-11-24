@@ -1,0 +1,20 @@
+.button{
+    color: black;
+    text-decoration: none; 
+    user-select: none; 
+    border: 1px solid black;
+    padding: .7em 1.5em;
+    outline: none; 
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+    align-self: center;
+}
+
+.button:hover { 
+    background: #4d7075; 
+} 
+.button:active {
+    background: #11454e; 
+} 

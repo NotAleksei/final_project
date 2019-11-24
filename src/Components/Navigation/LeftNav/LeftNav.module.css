@@ -22,7 +22,6 @@
 }
 
 .LeftNav ul {
-    
     list-style: none;
     margin: 0;
     padding: 0;
@@ -38,29 +37,30 @@
     text-decoration: none;
     background-color: #fff;
     position: relative;
-    padding: 0 20px 10px 20px;
+    padding: 0 20px 5px 0px;
     transition: opacity .4s;
 }
 
 .Leftnav ul li a:hover, .active {
-    border: 1px solid black;
     opacity: .7;
 }
 
+
 .LeftNav .button{
-        color: #fff;
-        text-decoration: none; 
-        user-select: none; 
-        background: #19705d; 
-        padding: .7em 1.5em;
-        outline: none; 
-        border-radius: 10px;
-        margin-top: 60px;
+    color: black;
+    text-decoration: none; 
+    user-select: none; 
+    border: 1px solid black;
+    padding: .7em 1.5em;
+    outline: none; 
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 60px;
 }
 
 .LeftNav .button:hover { 
-    background: #249980;
+    background: #6096a0; 
 } 
 .LeftNav .button:active {
-     background: #114e41; 
+    background: #11454e; 
 } 

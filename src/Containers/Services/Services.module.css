@@ -9,11 +9,36 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.Services img{
+.Services .background{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Services .background1{
+    background-color: rgb(197, 216, 212);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Services .background2{
+    background-color: rgb(156, 187, 187);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Services img{
+    opacity: 1;
+    height: 100%;
     object-fit: cover;
-    transition: .4s ease-out;
+    transition: .8s ease-out;
 }
 
 .Services article{
@@ -47,8 +72,9 @@
 .Services article:hover img{
     transform: scale(0.9);
 }
+
 .Services article:hover div{
-    background: rgba(0, 0, 0, 0.9);
-    opacity: 1;
+
+    opacity: 0.94;
 }
 

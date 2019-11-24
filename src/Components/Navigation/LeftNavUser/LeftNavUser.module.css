@@ -4,14 +4,14 @@
     justify-content: center;
     width: 25%;
     height: 80%;
-    background-color: #4a76a8;
+    background-color: #4d7075;
     border-radius: 40px 0 40px 0;
 }
 
 .LeftNavUser nav{
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 190px;
 }
 
 

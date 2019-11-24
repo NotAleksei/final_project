@@ -9,7 +9,7 @@ state={
     name: '',
     phone:'',
     date: '',
-    time: 'time',
+    time: '9:00',
 }
 
 changeHandler= event =>{
@@ -20,16 +20,18 @@ changeHandler= event =>{
 }
 
 selectChangeHandler = event =>{
-        console.log(event.target.value)
-        this.setState({
-            time: event.target.value
-        })
+    console.log(event.target.value)
+    this.setState({
+        time: event.target.value
+    })
 }
 
 
 saveAppointment = (e) =>{
     e.preventDefault()
-    if(localStorage.getItem('logIn')){
+    if(this.state.name===''||this.state.phone===''||this.state.date===''){
+        alert('необходимо заполнить все поля')
+    } else if(localStorage.getItem('logIn')){
         const userName = localStorage.getItem('logIn');
         let userInfo = JSON.parse(localStorage.getItem(userName))
         userInfo[1].push({
@@ -42,9 +44,21 @@ saveAppointment = (e) =>{
 
         localStorage.setItem(userName, JSON.stringify(userInfo))
         this.props.showSuccessModal()
+        this.setState({
+            name: '',
+            phone:'',
+            date: '',
+            time: '9:00',
+        })
         setTimeout(()=>{this.props.showSuccessModal()},1000)
     } else {
         this.props.showSuccessModal()
+        this.setState({
+            name: '',
+            phone:'',
+            date: '',
+            time: '9:00',
+        })
         setTimeout(()=>{this.props.showSuccessModal()},1000)
     }
 }
@@ -55,40 +69,45 @@ render(){
     return(
         <form className = {classes.Appointment}>
             <div className={classes.inputInfo}>
-            <div className = {classes.user}>
-                <label>Имя:</label>
-                <input name ='name' value={this.state.name} onChange={this.changeHandler}></input>
-            </div>
-            <div className = {classes.user}>
-                <label>Телефон:</label>
-                <input name ='phone' value={this.state.phone} onChange={this.changeHandler}></input>
-            </div>
-            <div className = {classes.date}>
-                <label>Дата:</label>
-                <input name ='date' value={this.state.date} onChange={this.changeHandler} type='date'></input>
-            </div>
-            <div className = {classes.date}>
-                <label>Время:</label>
-                <Select
-                    value = {this.state.time}
-                    onChange={this.selectChangeHandler}
-                    options={[
-                        {text: '9:00' , value: '9:00'},
-                        {text: '10:00' , value: '10:00'},
-                        {text: '11:00' , value: '11:00'},
-                        {text: '12:00' , value: '12:00'},
-                        {text: '13:00' , value: '13:00'},
-                        {text: '14:00' , value: '14:00'},
-                        {text: '15:00' , value: '15:00'},
-                        {text: '16:00' , value: '16:00'},
-                        {text: '17:00' , value: '17:00'},
-                        {text: '18:00' , value: '18:00'}
-                    ]}                    
-                />
-            </div>
+                <div className = {classes.user}>
+                    <label>Имя:</label>
+                    <input name ='name' value={this.state.name} onChange={this.changeHandler}></input>
+                </div>
+                <div className = {classes.user}>
+                    <label>Телефон:</label>
+                    <input name ='phone' value={this.state.phone} onChange={this.changeHandler}></input>
+                </div>
+                <div className = {classes.date}>
+                    <label>Дата:</label>
+                    <input name ='date' value={this.state.date} onChange={this.changeHandler} type='date'></input>
+                </div>
+                <div className = {classes.date}>
+                    <label>Время:</label>
+                    <Select
+                        value = {this.state.time}
+                        onChange={this.selectChangeHandler}
+                        options={[
+                            {text: '9:00' , value: '9:00'},
+                            {text: '10:00' , value: '10:00'},
+                            {text: '11:00' , value: '11:00'},
+                            {text: '12:00' , value: '12:00'},
+                            {text: '13:00' , value: '13:00'},
+                            {text: '14:00' , value: '14:00'},
+                            {text: '15:00' , value: '15:00'},
+                            {text: '16:00' , value: '16:00'},
+                            {text: '17:00' , value: '17:00'},
+                            {text: '18:00' , value: '18:00'}
+                        ]}                    
+                    />
+                </div>
             </div> 
-
-            <button onClick={this.saveAppointment}>Подтвердить запись</button>
+            <a
+                className = {classes.button}
+                onClick={this.saveAppointment}
+            >
+                Подтвердить запись
+            </a> 
+            {/* <button >Подтвердить запись</button> */}
         </form>
 
     )

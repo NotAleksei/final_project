@@ -1,0 +1,28 @@
+.ContactsPage{
+    background: url('../../img/background.jpg');
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(238, 238, 238);
+}
+
+.ContactsPage .articles{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 40%;
+    border: 1px solid rgb(185, 185, 185);
+    padding: 3%;
+}
+
+.ContactsPage h1{
+    border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+
+.ContactsPage .contacts{
+    width: 48%;
+}
+

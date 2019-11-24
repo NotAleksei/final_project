@@ -47,7 +47,7 @@ render(){
                     <input name ='name' value={this.state.name} onChange={this.changeHandler}></input>
                 </div>
                 <div className={classes.inputBlock}>
-                    <label>Возраст</label>
+                    <label>Возраст:</label>
                     <input name ='age' value={this.state.age} onChange={this.changeHandler}></input>
                 </div>
                 <div className={classes.inputBlock}>
@@ -62,8 +62,13 @@ render(){
                     <label>Email:</label>
                     <input name ='email' value={this.state.email} onChange={this.changeHandler}></input>
                 </div>
-                <button onClick={this.saveProfile}>Сохранить</button>
             </form>
+            <a 
+                className={classes.button}
+                onClick={this.saveProfile}
+            >
+                Сохранить
+            </a>
         </div>
     )
 }

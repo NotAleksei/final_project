@@ -9,7 +9,7 @@ class Services extends React.Component {
         Shave: ['БРИТЬЕ', 'Shave'],
         CutAndShave: ['СТРИЖКА И БРИТЬЕ', 'CutAndShave'],
         ShapeUp: ['МОДЕЛИРОВАНИЕ БОРОДЫ', 'ShapeUp'],
-        All: ['All', 'All'],
+        Style: ['СТАЙЛИНГ', 'style'],
     }
 
 // Очень быстро появляется темный DIV. скорректируй.
@@ -17,24 +17,34 @@ class Services extends React.Component {
     return(
         <div className={classes.Services}>
             <article  className={classes.firstPhoto}>
-                <img src={require('../../img/services/1.jpg')} alt=''></img>
+                <div className={classes.background}>
+                     <img src={require('../../img/services/1.png')} alt=''></img>
+                </div>
                 <ServiceInfo serviceName={this.state.HairCut[0]} serviceId={this.state.HairCut[1]}/>
             </article>
             <article  className={classes.secondPhoto}>
-                <img src={require('../../img/services/2.jpg')} alt=''></img>
+                <div className={classes.background1}>
+                    <img src={require('../../img/services/2.png')} alt=''></img>
+                </div>
                 <ServiceInfo serviceName={this.state.Shave[0]} serviceId={this.state.Shave[1]}/>
             </article>
             <article className={classes.thirdPhoto}>
-                <img src={require('../../img/services/3.jpg')} alt=''></img>
+                <div className={classes.background2}>
+                     <img src={require('../../img/services/3.png')} alt=''></img>
+                </div>
                 <ServiceInfo serviceName={this.state.CutAndShave[0]} serviceId={this.state.CutAndShave[1]}/>
             </article>
             <article className={classes.forthPhoto}>
-                <img src={require('../../img/services/4.jpg')} alt=''></img>
+                <div className={classes.background}>
+                     <img src={require('../../img/services/4.png')} alt=''></img>
+                </div>
                 <ServiceInfo serviceName={this.state.ShapeUp[0]} serviceId={this.state.ShapeUp[1]}/>
             </article>
             <article className={classes.fifthPhoto}>
-                <img src={require('../../img/services/5.jpg')} alt=''></img>
-                <ServiceInfo serviceName={this.state.All[0]} serviceId={this.state.All[1]}/>
+                <div className={classes.background}>
+                     <img src={require('../../img/services/5.png')} alt=''></img>
+                </div>
+                <ServiceInfo serviceName={this.state.Style[0]} serviceId={this.state.Style[1]}/>
             </article>
         </div>
     )
