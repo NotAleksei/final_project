@@ -12,8 +12,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    height: 35%;
+    width: 550px;
+    height: 350px;
     background-color: white;
     border-radius: 40px;
 }
