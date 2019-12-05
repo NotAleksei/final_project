@@ -13,4 +13,5 @@
     color: white;
     font-size: 30px;
     transition: opacity .5s ease-out;
+    text-align: center;
 }

@@ -35,7 +35,7 @@ class Services extends React.Component {
                 <ServiceInfo serviceName={this.state.CutAndShave[0]} serviceId={this.state.CutAndShave[1]}/>
             </article>
             <article className={classes.forthPhoto}>
-                <div className={classes.background}>
+                <div className={classes.background3}>
                      <img src={require('../../img/services/4.png')} alt=''></img>
                 </div>
                 <ServiceInfo serviceName={this.state.ShapeUp[0]} serviceId={this.state.ShapeUp[1]}/>
