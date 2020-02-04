@@ -30,9 +30,9 @@ render(){
           <Route path={process.env.PUBLIC_URL + '/'} exact = {true} component={HomePage}/>
           <Route path={process.env.PUBLIC_URL + '/services'} component={Services}/>
           <Route path={process.env.PUBLIC_URL + '/service/:id'} component={ServicePage}/>
-          <Route path='/contacts' component={ContactsPage}/>
-          <Route path='/auth' component={Auth}/>
-          <Route path='/about' component={AboutPage}/>
+          <Route path={process.env.PUBLIC_URL + '/contacts'} component={ContactsPage}/>
+          <Route path={process.env.PUBLIC_URL + '/auth'} component={Auth}/>
+          <Route path={process.env.PUBLIC_URL + '/about'} component={AboutPage}/>
           <Route 
             path='/user'
             render={
