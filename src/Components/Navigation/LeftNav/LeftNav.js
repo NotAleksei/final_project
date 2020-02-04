@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom'
 const LeftNav = props => {
     
     const links = [
-        {to: '/', label: 'ГЛАВНАЯ', exact: true}, 
+        {to: process.env.PUBLIC_URL + '/', label: 'ГЛАВНАЯ', exact: true}, 
         {to: '/about', label: 'О НАС', exact: false}, 
         {to: '/services', label: 'УСЛУГИ', exact: false},
         {to: '/contacts', label: 'КОНТАКТЫ', exact: false},
