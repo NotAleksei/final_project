@@ -27,9 +27,9 @@ render(){
     return (
       <Layout>
         <Switch>
-          <Route path='/' exact = {true} component={HomePage}/>
-          <Route path='/services' component={Services}/>
-          <Route path='/service/:id' component={ServicePage}/>
+          <Route path={process.env.PUBLIC_URL + '/'} exact = {true} component={HomePage}/>
+          <Route path={process.env.PUBLIC_URL + '/services'} component={Services}/>
+          <Route path={process.env.PUBLIC_URL + '/service/:id'} component={ServicePage}/>
           <Route path='/contacts' component={ContactsPage}/>
           <Route path='/auth' component={Auth}/>
           <Route path='/about' component={AboutPage}/>
